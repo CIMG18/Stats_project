@@ -17,6 +17,6 @@ def home(request):
     df = pd.DataFrame(nba_teams)
     
     # 3. Lo pasamos a HTML
-    tabla_html = df[['full_name', 'city', 'state']].to_html(classes='table table-striped')
+    tabla_html = df[[ 'full_name', 'abbreviation', 'nickname', 'city', 'state', 'year_founded']].to_html(classes='table table-striped')
 
     return render(request, 'index.html', {'tabla': tabla_html})
